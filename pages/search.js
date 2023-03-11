@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import useRouter from 'next/router';
+import {useRouter} from 'next/router';
 import Image from 'next/image'
 import {Flex, Box, Text, Icon} from '@chakra-ui/react'
 import { BsFilter } from 'react-icons/bs'
@@ -8,7 +8,7 @@ import Property from '../components/Property'
 import noresult from '../assets/noresult.svg'
 import { fetchApi, baseUrl } from '../utils/fetchApi'
 
-const search = ({properties}) => {
+const Search = ({properties}) => {
     const [searchFilters, setSearchFilters] = useState(false);
     const router = useRouter();
   
@@ -46,7 +46,7 @@ const search = ({properties}) => {
   )
 }
 
-export default search
+export default Search
 
 export async function getServerSideProps({ query }) {
     const purpose = query.purpose || 'for-rent';
